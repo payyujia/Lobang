@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/Auth.css';
 
 export default function RegisterPage() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ export default function RegisterPage() {
     setErrors([]);
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/auth/register', {
+      const res = await fetch('/api/auth/register', {
         method:      'POST',
         credentials: 'include',
         headers:     { 'Content-Type': 'application/json' },
@@ -35,8 +34,8 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="auth-page">
-      <nav className="auth-nav">
+    <div>
+      <nav className="nav">
         <Link to="/home" className="nav__logo">lobang<span>.</span></Link>
         <div className="nav__actions">
           <Link to="/register" className="nav__add">Sign Up</Link>
@@ -46,8 +45,8 @@ export default function RegisterPage() {
 
       <div className="page">
         <div className="card auth-card">
-          <h1 className="card__title">Create account</h1>
-          <p className="card__sub">Start trading today.</p>
+          <h1>Create account</h1>
+          <p className="section-sub">Start trading today.</p>
 
           {errors.length > 0 && (
             <div className="alert alert--error">

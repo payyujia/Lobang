@@ -53,24 +53,24 @@ exports.registerPost = async (req, res) => {
     if (!password) error.push('Password cannot be empty.');
     if (!confirmPassword) error.push('Confirm Password cannot be empty.');
 
-    if (error.length > 0) return res.json({ error });
+    if (error.length > 0) return res.status(400).json({ error });
 
     if (password !== confirmPassword) {
         error.push('Passwords do not match.');
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 
     const existingUser = await User.getByEmail(email);
     if (existingUser) {
         error.push('Email is already in use.');
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
     await User.create({ email, name, passwordHash});
 
-    res.redirect('/login');
+    res.status(201).json({ message: 'Account created' });
 };
 
 //  GET /update-account 

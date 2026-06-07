@@ -386,6 +386,14 @@ a {
   box-shadow: var(--shadow-sm);
   padding: 32px 28px;
 }
+.auth-card {
+  max-width: 440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 
 .card--sm {
   padding: 20px;

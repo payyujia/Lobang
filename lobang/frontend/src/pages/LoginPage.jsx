@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import '../styles/Auth.css';
 
 export default function LoginPage() {
   const { login }    = useAuth();
@@ -37,8 +36,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="auth-page">
-      <nav className="auth-nav">
+    <div>
+      <nav className="nav">
         <Link to="/home" className="nav__logo">lobang<span>.</span></Link>
         <div className="nav__actions">
           <Link to="/register" className="nav__add">Sign Up</Link>
@@ -48,8 +47,8 @@ export default function LoginPage() {
 
       <div className="page">
         <div className="card auth-card">
-          <h1 className="card__title">Sign in</h1>
-          <p className="card__sub">Welcome back.</p>
+          <h1>Sign in</h1>
+          <p className="section-sub">Welcome back.</p>
 
           {errors.length > 0 && (
             <div className="alert alert--error">
