@@ -1,0 +1,103 @@
+/* TagPicker.css — shared tag picker styles, mirrors style.css .tag-picker */
+
+.tag-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tag-picker__input-wrap {
+  position: relative;
+}
+
+.tag-picker__input {
+  width: 100%;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color var(--t);
+}
+
+.tag-picker__input:focus {
+  border-color: var(--accent);
+}
+
+.tag-picker__dropdown--open {
+  display: block;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 50;
+  overflow: hidden;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.tag-picker__option {
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--t);
+}
+
+.tag-picker__option:hover { background: var(--bg); }
+
+.tag-picker__option--create {
+  color: var(--text-2);
+  font-style: italic;
+}
+
+.tag-picker__option--create strong {
+  color: var(--text);
+  font-style: normal;
+}
+
+.tag-picker__loading {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+/* Pills */
+.tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--primary);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+}
+
+.tag-pill__remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 0;
+  color: var(--text);
+  opacity: .6;
+  transition: opacity var(--t);
+}
+
+.tag-pill__remove:hover { opacity: 1; }

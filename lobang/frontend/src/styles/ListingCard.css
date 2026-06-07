@@ -1,0 +1,14 @@
+/* ListingCard.css — mirrors style.css .listing-card rules */
+
+.listing-card-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listing-card-actions {
+  display: flex;
+  gap: 8px;
+  padding: 0 2px;
+  flex-wrap: wrap;
+}

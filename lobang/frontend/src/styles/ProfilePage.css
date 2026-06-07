@@ -1,0 +1,179 @@
+/* ProfilePage.css */
+
+.profile-loading {
+  text-align: center;
+  padding: 80px;
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Hero */
+.profile-hero {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 600px) {
+  .profile-hero { flex-direction: column; align-items: center; text-align: center; }
+}
+
+.profile-avatar {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 36px; font-weight: 600;
+  flex-shrink: 0;
+  border: 3px solid var(--border);
+  overflow: hidden;
+}
+
+.profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.profile-info { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+
+.profile-name {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 28px; font-weight: 600;
+}
+
+.profile-meta {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  font-size: 13px; color: var(--text-2); font-weight: 600;
+}
+
+.profile-meta span { display: flex; align-items: center; gap: 4px; }
+
+.profile-bio {
+  font-size: 14px; color: var(--text);
+  line-height: 1.65; max-width: 520px;
+}
+
+/* Reviews layout */
+.reviews-wrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 700px) { .reviews-wrap { grid-template-columns: 1fr; } }
+
+.reviews-sidebar {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  position: sticky;
+  top: calc(var(--nav-h) + 16px);
+}
+
+.reviews-sidebar__title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px; font-weight: 600;
+}
+
+.karma-card {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+.karma-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.star-filter-btn {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 8px 10px;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--text); transition: border-color var(--t), background var(--t);
+}
+
+.star-filter-btn:hover  { border-color: var(--accent); }
+.star-filter-btn.active { border-color: var(--primary); background: var(--primary); }
+.star-filter-btn__count { color: var(--text-2); font-size: 11px; margin-left: auto; }
+
+/* Review card */
+.review-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.review-card__header { display: flex; align-items: center; gap: 10px; }
+
+.review-card__avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--secondary);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 15px; font-weight: 600; flex-shrink: 0;
+  overflow: hidden;
+}
+
+.review-card__name {
+  font-weight: 700; font-size: 14px;
+  text-decoration: none; color: var(--text);
+  display: block;
+}
+
+.review-card__name:hover { text-decoration: underline; }
+.review-card__stars { color: #f0b429; font-size: 13px; letter-spacing: 1px; }
+.review-card__time  { font-size: 11px; color: var(--text-2); font-weight: 600; margin-left: auto; }
+
+.review-card__trade {
+  font-size: 12px; color: var(--text-2); font-weight: 600;
+  background: var(--bg); border-radius: var(--radius-sm);
+  padding: 6px 10px;
+}
+
+.review-card__trade strong { color: var(--text); }
+.review-card__comment { font-size: 14px; line-height: 1.6; }
+
+/* Write review form */
+.review-form-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+
+.review-form-card__title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 17px; font-weight: 600;
+}
+
+.trade-snapshot {
+  font-size: 13px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.star-input {
+  display: flex;
+  gap: 4px;
+}

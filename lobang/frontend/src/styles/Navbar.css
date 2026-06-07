@@ -1,0 +1,92 @@
+/* Navbar.css — all navbar-specific styles.
+   Design tokens live in tokens.css / style.css */
+
+/*  Category button with active state  */
+.cat-btn {
+  white-space: nowrap;
+  position: relative;
+}
+
+.cat-btn--active {
+  background: var(--primary) !important;
+  border-color: var(--primary-dark) !important;
+  color: var(--text) !important;
+}
+
+.cat-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/*  Category dropdown override  */
+.cat-dropdown {
+  min-width: 240px !important;
+  padding: 4px 0 8px;
+}
+
+.cat-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-dark);
+  cursor: pointer;
+  flex-shrink: 0;
+  /* override .nav__dropdown input styles */
+  border: 2px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 0 !important;
+}
+
+.cat-option span {
+  flex: 1;
+}
+
+.cat-clear {
+  display: block !important;
+  margin: 8px 12px 0 !important;
+  padding: 6px 14px !important;
+  border-radius: var(--radius-pill) !important;
+  border: 1.5px solid var(--danger) !important;
+  background: transparent !important;
+  color: var(--danger) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  width: auto !important;
+  transition: background var(--t), color var(--t);
+}
+
+.cat-clear:hover {
+  background: var(--danger) !important;
+  color: #fff !important;
+}
+
+/*  Notification dropdown  */
+.notif-dropdown {
+  min-width: 300px !important;
+  right: 0;
+  max-height: 500px;    /* Limits the dropdown height */
+  overflow-y: auto;     /* Adds a vertical scrollbar only when needed */
+  overflow-x: hidden;   /* Prevents horizontal scrolling */
+}
+
+.mark-read-btn {
+  text-transform: lowercase;
+  letter-spacing: 0;
+  padding: 0!important;
+  border-bottom:none!important;
+  justify-content: flex-end;
+}
+
+.mark-read-btn:hover {
+  background-color: transparent!important;
+  color: var(--accent);
+}
