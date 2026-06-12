@@ -143,11 +143,9 @@ exports.getUnreadCount = async (req, res) => {
 exports.resolveChat = async (req, res) => {
   try {
     const { listingId, participant1 } = req.body;
-    console.log("hi",req.body)
     const listing = await Listing.findById(listingId).select('ownerId').lean();
     const participant2 = listing.ownerId;    
     const chat = await Chat.getOrCreateChatForOffer(listingId,participant1, participant2);
-    console.log('heres chat:',chat)
     res.json({ chatId: chat._id });
   } catch (err) {
     console.log(err)

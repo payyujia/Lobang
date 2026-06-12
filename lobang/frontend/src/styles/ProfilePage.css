@@ -40,23 +40,6 @@
 
 .profile-info { flex: 1; display: flex; flex-direction: column; gap: 8px; }
 
-.profile-name {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 28px; font-weight: 600;
-}
-
-.profile-meta {
-  display: flex; flex-wrap: wrap; gap: 12px;
-  font-size: 13px; color: var(--text-2); font-weight: 600;
-}
-
-.profile-meta span { display: flex; align-items: center; gap: 4px; }
-
-.profile-bio {
-  font-size: 14px; color: var(--text);
-  line-height: 1.65; max-width: 520px;
-}
-
 /* Reviews layout */
 .reviews-wrap {
   display: grid;
@@ -75,11 +58,6 @@
   display: flex; flex-direction: column; gap: 12px;
   position: sticky;
   top: calc(var(--nav-h) + 16px);
-}
-
-.reviews-sidebar__title {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 16px; font-weight: 600;
 }
 
 .karma-card {
@@ -157,11 +135,6 @@
   border-radius: var(--radius-lg);
   padding: 20px;
   display: flex; flex-direction: column; gap: 14px;
-}
-
-.review-form-card__title {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 17px; font-weight: 600;
 }
 
 .trade-snapshot {

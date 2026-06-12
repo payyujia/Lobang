@@ -50,8 +50,6 @@ exports.homeGet = async (req, res) => {
         : [];
       const wishlistTags = wishlistListings.flatMap(l => l.descTags || []);
 
-      console.log({ ownedTags, wishlistTags });
-
       const [tagged, recentRaw] = await Promise.all([
         Listing.getRecommendedListings(ownedTags, wishlistTags, userId),
         Listing.getRecentListings({ limit: 20 }),
@@ -81,17 +79,6 @@ exports.homeGet = async (req, res) => {
 exports.getListingForEdit = async (req, res) => {
   try {
     const listing = req.query.id ? await Listing.findById(req.query.id).lean() : null;
-    res.json({ listing });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
-
-// GET /api/listings/:id
-exports.getListing = async (req, res) => {
-  try {
-    const listing = await Listing.findById(req.params.id).populate('ownerId', 'name avatar').lean();
-    if (!listing) return res.status(404).json({ error: 'Not found' });
     res.json({ listing });
   } catch (err) {
     res.status(500).json({ error: err.message });

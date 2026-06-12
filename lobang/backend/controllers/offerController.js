@@ -5,10 +5,10 @@ const Notification = require('../models/notificationModel');
 const Transaction  = require('../models/transactionModel');
 const { getOrCreateChatForOffer } = require('../models/chatModel');
 const {pushNotification} = require('../socketSetup')
-// GET /api/listings/:id/offers
+// GET /api/listings/:id
 exports.showListing = async (req, res) => {
   try {
-    const listing = await Listing.findById(req.params.id).populate('ownerId');
+    const listing = await Listing.incrementViews(req.params.id).populate('ownerId');
     if (!listing) return res.status(404).json({ error: 'Listing not found' });
 
     const seller  = listing.ownerId;
@@ -36,7 +36,7 @@ exports.showListing = async (req, res) => {
 // POST /api/listings/:id/offers
 exports.createOffer = async (req, res) => {
   try {
-    const listing = await Listing.findById(req.params.id);
+    const listing = await Listing.incrementOffers(req.params.id);
     const { offeredListings } = req.body;
 
     const offer = await Offer.create(

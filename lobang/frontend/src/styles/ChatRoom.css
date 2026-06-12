@@ -20,62 +20,12 @@
   box-shadow: var(--shadow-sm);
 }
 
-.back-btn {
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text-2);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color var(--t);
-}
-
-.back-btn:hover { color: var(--text); }
-
 .chatroom-party {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: 1;
 }
-
-.chatroom-avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--secondary);
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  border: 2px solid var(--border);
-}
-
-.chatroom-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.chatroom-name {
-  font-family: 'Fredoka', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.chatroom-listing-link {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-2);
-  text-decoration: none;
-  transition: color var(--t);
-}
-
-.chatroom-listing-link:hover { color: var(--text); text-decoration: underline; }
 
 /*  Messages area ─ */
 .chatroom-messages {
@@ -269,31 +219,6 @@ video.msg-media-item {
   flex-shrink: 0;
 }
 
-.preview-thumb {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  border: 2px solid var(--border);
-}
-
-.preview-remove {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--danger);
-  color: #fff;
-  border: none;
-  font-size: 9px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /*  Input bar ─ */
 .chatroom-input-bar {
   flex-shrink: 0;
@@ -305,27 +230,6 @@ video.msg-media-item {
   border-top: 2px solid var(--border);
 }
 
-.attach-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: transparent;
-  border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: border-color var(--t), background var(--t);
-}
-
-.attach-btn:hover:not(:disabled) {
-  border-color: var(--accent);
-  background: var(--bg);
-}
-
-.attach-btn:disabled { opacity: .4; cursor: default; }
 
 .chatroom-textarea {
   flex: 1;

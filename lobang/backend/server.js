@@ -21,7 +21,7 @@ const sessionMiddleware = session({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(sessionMiddleware);  // ← use the variable, not an inline call
+app.use(sessionMiddleware);  //  use the variable, not an inline call
 
 //  API Routes ─
 app.use('/api',          require('./routes/userRoutes'));

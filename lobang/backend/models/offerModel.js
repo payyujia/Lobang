@@ -25,6 +25,9 @@ exports.deleteForListing = function (listingId) {
 exports.findById = function (id) {
     return Offer.findOne({_id:id});
 };
+exports.incrementOffers = function (listingId) {
+  return Listing.updateOne({ _id: listingId }, { $inc: { 'popularity.offers': 1 } });
+};
 exports.create = function (listingId,offererId,offeredListingId,status){
     return Offer.create({listingId,offererId,offeredListingId,status});
 };

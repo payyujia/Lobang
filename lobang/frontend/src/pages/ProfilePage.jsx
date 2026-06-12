@@ -92,10 +92,10 @@ export default function ProfilePage() {
           </div>
 
           <div className="profile-info">
-            <div className="profile-name">{profileUser.name}</div>
-            <div className="profile-meta">
-              {profileUser.location?.label && <span><img src="/icons/location.svg" style={{ width: '1em', height: '1em'}}/> {profileUser.location.label}</span>}
-              <span>📅 Joined {new Date(profileUser.createdAt).toLocaleDateString('en-SG', { month: 'long', year: 'numeric' })}</span>
+            <h1>{profileUser.name}</h1>
+            <div className="section-sub">
+              {profileUser.location?.label && <span><img src="/icons/location.svg" style={{ width: '1em', height: '1em'}}/> {profileUser.location.label}  |  </span>}
+              <span>📅 Joined {new Date(profileUser.createdAt).toLocaleDateString('en-SG', { month: 'long', year: 'numeric' })}  |  </span>
               {avgRating
                 ? (
                   <span>
@@ -108,7 +108,7 @@ export default function ProfilePage() {
                 : <span>No reviews yet</span>
               }
             </div>
-            {profileUser.bio && <p className="profile-bio">{profileUser.bio}</p>}
+            {profileUser.bio && <p>{profileUser.bio}</p>}
             {isOwner && (
               <Link to="/update-account" className="btn btn--ghost btn--sm" style={{ width: 'fit-content', marginTop: 8 }}>
                 Edit Profile
@@ -210,7 +210,7 @@ export default function ProfilePage() {
             <div className="reviews-sidebar">
               {/* Karma card */}
               <div className="karma-card">
-                <div className="reviews-sidebar__title">Trader Profile</div>
+                <h3 >Trader Profile</h3>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 28 }}>{karma.tier.emoji}</span>
                   <div>
@@ -231,9 +231,9 @@ export default function ProfilePage() {
                   <KarmaStat label="Reviews" value={reviewCount} />
                 </div>
               </div>
-
+              <br />
               {/* Star filter */}
-              <div className="reviews-sidebar__title" style={{ marginTop: 4 }}>Filter by Rating</div>
+              <h3>Filter by Rating</h3>
               <button className="star-filter-btn active" onClick={() => fetchData()}>
                 <span>All reviews</span>
                 <span className="star-filter-btn__count">{reviewCount}</span>
@@ -253,7 +253,7 @@ export default function ProfilePage() {
               {/* Write review */}
               {canReview && (
                 <div className="review-form-card">
-                  <div className="review-form-card__title">✍️ Write a Review</div>
+                  <h3>Write a Review</h3>
                   {sharedTransaction?.snapshot && (
                     <div className="trade-snapshot">
                       <strong>{sharedTransaction.snapshot.listingTitle}</strong>

@@ -45,8 +45,8 @@ export default function OfferCard({ offer, perspective, onRefresh, navigate }) {
         </div>
         <div className="offer-card__sub">
           {perspective === 'made'
-            ? <>For their: <Link to={`/listings/${offer.listingId?._id}`} style={{ color: 'var(--text)', textDecoration: 'underline' }}>{offer.listingId?.title}</Link></>
-            : <>For your: <Link to={`/listings/${offer.listingId?._id}`} style={{ color: 'var(--text)', textDecoration: 'underline' }}>{offer.listingId?.title}</Link></>
+            ? <>For their: <Link to={`/listings/${offer.listingId?._id}`} className="sub-link">{offer.listingId?.title}</Link></>
+            : <>For your: <Link to={`/listings/${offer.listingId?._id}`} className="sub-link">{offer.listingId?.title}</Link></>
           }
           {' '}· {timeAgo(offer.createdAt)}
         </div>

@@ -44,7 +44,7 @@ export default function ChatRoom() {
       .finally(() => setLoading(false));
   }, [id]);
 
-  //  Socket.io ─
+  //  Socket.io 
   useEffect(() => {
     emit('join_chat', { chatId: id });
 
@@ -64,7 +64,7 @@ export default function ChatRoom() {
     return () => { offMsg(); offTyping(); offStop(); };
   }, [id, emit, on]);
 
-  //  Scroll to bottom on new messages ─
+  //  Scroll to bottom on new messages 
   const scrollToBottom = useCallback(() => {
     setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: 'smooth' }), 50);
   }, []);
@@ -73,7 +73,7 @@ export default function ChatRoom() {
     if (!loading) scrollToBottom();
   }, [loading, scrollToBottom]);
 
-  //  Load older messages ─
+  //  Load older messages 
   const loadMore = async () => {
     if (!hasMore || loadingMore) return;
     setLM(true);
@@ -98,7 +98,7 @@ export default function ChatRoom() {
     }, 1500);
   };
 
-  //  Media selection ─
+  //  Media selection 
   const handleMediaChange = e => {
     const files = Array.from(e.target.files);
     const combined = [...mediaFiles, ...files].slice(0, MAX_FILES);
@@ -123,7 +123,6 @@ export default function ChatRoom() {
     e?.preventDefault();
     if ((!text.trim() && mediaFiles.length === 0) || sending) return;
 
-    // Pure text → use socket for instant delivery
     if (mediaFiles.length === 0 && text.trim()) {
       emit('send_message', { chatId: id, text: text.trim() });
       setText('');
@@ -176,19 +175,19 @@ export default function ChatRoom() {
     <div className="chatroom-page">
       {/* Header */}
       <div className="chatroom-header">
-        <Link to="/chats" className="back-btn">← Back</Link>
+        <Link to="/chats">⤺</Link>
         <div className="chatroom-party">
-          <div className="chatroom-avatar">
+          <div className="seller-card__avatar">
             {other?.avatar
               ? <img src={`/uploads/${other.avatar}`} alt={other.name} />
               : <span>{other?.name?.charAt(0).toUpperCase()}</span>
             }
           </div>
           <div>
-            <div className="chatroom-name">{other?.name}</div>
+            <h3 >{other?.name}</h3>
             <Link
               to={`/listings/${chat.listingId?._id}`}
-              className="chatroom-listing-link"
+              className="sub-link section-sub"
             >
               re: {chat.listingId?.title}
             </Link>
@@ -239,10 +238,10 @@ export default function ChatRoom() {
           {previews.map((p, i) => (
             <div key={i} className="media-preview-item">
               {p.type === 'video'
-                ? <video src={p.url} className="preview-thumb" />
-                : <img src={p.url} alt={p.name} className="preview-thumb" />
+                ? <video src={p.url} className="thumb-item" />
+                : <img src={p.url} alt={p.name} className="thumb-item" />
               }
-              <button className="preview-remove" onClick={() => removeMedia(i)}>✕</button>
+              <button className="thumb-remove" onClick={() => removeMedia(i)}>✕</button>
             </div>
           ))}
         </div>
@@ -252,12 +251,12 @@ export default function ChatRoom() {
       <div className="chatroom-input-bar">
         <button
           type="button"
-          className="attach-btn"
+          className="nav__icon-btn"
           onClick={() => fileInputRef.current?.click()}
           title="Attach image or video"
           disabled={mediaFiles.length >= MAX_FILES}
         >
-          <img className="nav__icon-btn" src="/icons/upload.svg" alt="upload" />
+          <img src="/icons/upload.svg" style={{ width: '1.5em', height: '1.5em'}} alt="upload" />
         </button>
         <input
           ref={fileInputRef}

@@ -37,21 +37,20 @@ export default function ListingDetail() {
         : [...prev, listingId]
     );
   };
-  // Replace the static fetch with a reactive one
-useEffect(() => {
-  if (!user) return;
-  const controller = new AbortController();
-  
-  fetch(`/api/listings/mine/search?q=${encodeURIComponent(offerSearch)}`, { 
-    credentials: 'include',
-    signal: controller.signal,
-  })
-    .then(r => r.json())
-    .then(d => setMyListings(d.listings || []))
-    .catch(() => {});
+  useEffect(() => {
+    if (!user) return;
+    const controller = new AbortController();
+    
+    fetch(`/api/listings/mine/search?q=${encodeURIComponent(offerSearch)}`, { 
+      credentials: 'include',
+      signal: controller.signal,
+    })
+      .then(r => r.json())
+      .then(d => setMyListings(d.listings || []))
+      .catch(() => {});
 
-  return () => controller.abort(); // cancel previous request on each keystroke
-}, [offerSearch]); // ← re-runs every time offerSearch changes
+    return () => controller.abort(); // cancel previous request on each keystroke
+  }, [offerSearch]); //  re-runs every time offerSearch changes
   const handleOffer = async () => {
     if (!selected.length) return;
     setSub(true);

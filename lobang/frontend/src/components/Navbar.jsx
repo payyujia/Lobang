@@ -119,7 +119,7 @@ export default function Navbar() {
             className={`btn btn--sm btn--ghost cat-btn${selectedCats.length ? ' cat-btn--active' : ''}`}
             onClick={() => setCatOpen(o => !o)}
           >
-            Categories {selectedCats.length > 0 && <span className="cat-badge">{selectedCats.length}</span>} ▽
+            Categories {selectedCats.length > 0 && <span className="cat-badge">{selectedCats.length}</span>} ⏷
           </button>
           {catOpen && (
             <div className="nav__dropdown cat-dropdown">
