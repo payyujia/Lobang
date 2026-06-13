@@ -18,6 +18,7 @@ exports.createNotification = async function (data) {
   const notif = await Notification.create(data);
   // return for the socket
   return {
+    _id:notif._id,
     type: notif.type,
     message: notif.message,
     linkUrl: notif.linkUrl,

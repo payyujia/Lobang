@@ -85,15 +85,27 @@ export default function Navbar() {
     setUnread(0);
     setNotifs(prev => prev.map(n => ({ ...n, isRead: true })));
   };
-
+  
   const handleNotifClick = async (n) => {
-    await fetch(`/api/notifications/${n._id}/read`, {
-      method: 'POST', credentials: 'include',
-    });
     setNotifOpen(false);
+    
+    // only decrement if it was unread
+    if (!n.isRead) {
+      await fetch(`/api/notifications/${n._id}/read`, {
+        method: 'POST', credentials: 'include',
+      });
+      // mark it read in the array
+      setNotifs(prev =>
+        prev.map(notif =>
+          notif._id === n._id ? { ...notif, isRead: true } : notif
+        )
+      );
+      // decrement the badge count
+      setUnread(prev => Math.max(0, prev - 1));
+    }
+
     navigate(n.linkUrl);
   };
-
   if (!user) return null;
 
   const initials = user.name?.charAt(0).toUpperCase();
