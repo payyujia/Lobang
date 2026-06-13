@@ -1,0 +1,836 @@
+[{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773ee"
+  },
+  "slug": "monitor",
+  "displayName": "Monitor",
+  "category": "Electronics",
+  "aliases": [
+    "computer"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773fa"
+  },
+  "slug": "dumbbells",
+  "displayName": "Dumbbells",
+  "category": "Sports & Outdoors",
+  "aliases": [
+    "weights"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773fb"
+  },
+  "slug": "skateboard",
+  "displayName": "Skateboard",
+  "category": "Sports & Outdoors",
+  "aliases": [
+    "flipboard"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773fc"
+  },
+  "slug": "tent",
+  "displayName": "Tent",
+  "category": "Sports & Outdoors",
+  "aliases": [
+    "camping",
+    "shelter"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773fe"
+  },
+  "slug": "surfboard",
+  "displayName": "Surfboard",
+  "category": "Sports & Outdoors",
+  "aliases": [
+    "wave rider",
+    "surf plank",
+    "wave board"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77405"
+  },
+  "slug": "dvd",
+  "displayName": "DVD",
+  "category": "Books & Media",
+  "aliases": [
+    "cd",
+    "vinyl",
+    "disc"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77408"
+  },
+  "slug": "furniture",
+  "displayName": "Furniture",
+  "category": "Furniture & Home",
+  "aliases": [
+    "chair",
+    "table",
+    "vanity",
+    "shelf",
+    "cupboard"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7740e"
+  },
+  "slug": "blender",
+  "displayName": "Blender",
+  "category": "Food & Beverages",
+  "aliases": [
+    "juicer"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77411"
+  },
+  "slug": "action-figure",
+  "displayName": "Action Figure",
+  "category": "Toys & Hobbies",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7741c"
+  },
+  "slug": "photography",
+  "displayName": "Photography",
+  "category": "Services",
+  "aliases": [
+    "camera",
+    "photoshoot",
+    "modelling",
+    "editorial",
+    "film"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773e9"
+  },
+  "slug": "headphones",
+  "displayName": "Headphones",
+  "category": "Electronics",
+  "aliases": [
+    "music",
+    "headset"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773eb"
+  },
+  "slug": "gaming-console",
+  "displayName": "Gaming Console",
+  "category": "Electronics",
+  "aliases": [
+    "xbox",
+    "nintendo",
+    "switch"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773ef"
+  },
+  "slug": "speaker",
+  "displayName": "Speaker",
+  "category": "Electronics",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f1"
+  },
+  "slug": "dress",
+  "displayName": "Dress",
+  "category": "Clothing & Accessories",
+  "aliases": [
+    "frock",
+    "gown",
+    "skirt",
+    "outfit",
+    "clothes"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f4"
+  },
+  "slug": "jacket",
+  "displayName": "Jacket",
+  "category": "Clothing & Accessories",
+  "aliases": [
+    "cloak",
+    "outerwear",
+    "coat",
+    "windbreaker"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f5"
+  },
+  "slug": "sunglasses",
+  "displayName": "Sunglasses",
+  "category": "Clothing & Accessories",
+  "aliases": ["shades"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f7"
+  },
+  "slug": "belt",
+  "displayName": "Belt",
+  "category": "Clothing & Accessories",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77400"
+  },
+  "slug": "badminton-racket",
+  "displayName": "Badminton Racket",
+  "category": "Sports & Outdoors",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77406"
+  },
+  "slug": "video-game",
+  "displayName": "Video Game",
+  "category": "Books & Media",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7740b"
+  },
+  "slug": "kitchen-appliance",
+  "displayName": "Kitchen Appliance",
+  "category": "Food & Beverages",
+  "aliases": ["kitchen","cooking"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77410"
+  },
+  "slug": "trading-card",
+  "displayName": "Trading Card",
+  "category": "Toys & Hobbies",
+  "aliases": ["pokemon"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77413"
+  },
+  "slug": "tattoo",
+  "displayName": "Tattoo inking",
+  "category": "Services",
+  "aliases": ["ink","body art","tat"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77414"
+  },
+  "slug": "stamp",
+  "displayName": "Stamp",
+  "category": "Toys & Hobbies",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77415"
+  },
+  "slug": "funko-pop",
+  "displayName": "Funko Pop",
+  "category": "Toys & Hobbies",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77416"
+  },
+  "slug": "lego",
+  "displayName": "LEGO",
+  "category": "Toys & Hobbies",
+  "aliases": ["toy bricks"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77418"
+  },
+  "slug": "puzzle",
+  "displayName": "Puzzle",
+  "category": "Toys & Hobbies",
+  "aliases": ["jigsaw"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7741a"
+  },
+  "slug": "card-game",
+  "displayName": "Card Game",
+  "category": "Toys & Hobbies",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7741b"
+  },
+  "slug": "tutoring",
+  "displayName": "Tutoring",
+  "category": "Other",
+  "aliases": [
+    "remedial",
+    "enrichment classes",
+    "lessons"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7741e"
+  },
+  "slug": "home-cooking",
+  "displayName": "Home Cooking",
+  "category": "Other",
+  "aliases": [
+    "bussin"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7741f"
+  },
+  "slug": "repair-service",
+  "displayName": "Repair Service",
+  "category": "Other",
+  "aliases": [
+    "fix",
+    "refurbish"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773e6"
+  },
+  "slug": "smartphone",
+  "displayName": "Smartphone",
+  "category": "Electronics",
+  "aliases": [
+    "iphone",
+    "phone"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773e7"
+  },
+  "slug": "laptop",
+  "displayName": "Laptop",
+  "category": "Electronics",
+  "aliases": [
+    "macbook",
+    "thinkpad",
+    "computer"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773ea"
+  },
+  "slug": "camera",
+  "displayName": "Camera",
+  "category": "Electronics",
+  "aliases": [
+    "photo",
+    "polaroid",
+    "cam"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773ed"
+  },
+  "slug": "keyboard",
+  "displayName": "Keyboard",
+  "category": "Electronics",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f0"
+  },
+  "slug": "sneakers",
+  "displayName": "Sneakers",
+  "category": "Clothing & Accessories",
+  "aliases": [
+    "sports shoes",
+    "nike",
+    "adidas"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f2"
+  },
+  "slug": "watch",
+  "displayName": "Watch",
+  "category": "Clothing & Accessories",
+  "aliases": [
+    "wristwatch",
+    "clock"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f8"
+  },
+  "slug": "bicycle",
+  "displayName": "Bicycle",
+  "category": "Sports & Outdoors",
+  "aliases": [
+    "bike"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f9"
+  },
+  "slug": "yoga-mat",
+  "displayName": "Yoga Mat",
+  "category": "Sports & Outdoors",
+  "aliases": [
+    "mat pilates",
+    "anti slip mat",
+    "gymnastics"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773fd"
+  },
+  "slug": "fishing-rod",
+  "displayName": "Fishing Rod",
+  "category": "Sports & Outdoors",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77401"
+  },
+  "slug": "novel",
+  "displayName": "Novel",
+  "category": "Books & Media",
+  "aliases": ["book","novella","fiction"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77403"
+  },
+  "slug": "comic-book",
+  "displayName": "Comic Book",
+  "category": "Books & Media",
+  "aliases": ["anime","marvel","dc"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77409"
+  },
+  "slug": "lamp",
+  "displayName": "Lamp",
+  "category": "Furniture & Home",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7740c"
+  },
+  "slug": "toolset",
+  "displayName": "Toolset",
+  "category": "Automotive",
+  "aliases": [
+    "wrench",
+    "screwdriver",
+    "hammer",
+    "screws",
+    "nuts",
+    "bolts"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7740f"
+  },
+  "slug": "fan",
+  "displayName": "Fan",
+  "category": "Furniture & Home",
+  "aliases": [
+    "cooling fan"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77412"
+  },
+  "slug": "vintage-item",
+  "displayName": "Vintage Item",
+  "category": "Toys & Hobbies",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77417"
+  },
+  "slug": "doll",
+  "displayName": "Doll",
+  "category": "Toys & Hobbies",
+  "aliases": [
+    "Ever after high",
+    "bratz",
+    "barbie"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7741d"
+  },
+  "slug": "graphic-design",
+  "displayName": "Graphic Design",
+  "category": "Services",
+  "aliases": ["poster design","digital print","art","adobe","illustration"],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e4433a60d814f68c6dc09"
+  },
+  "slug": "calculator",
+  "displayName": "Calculator",
+  "aliases": [],
+  "category": "Electronics",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0fe93efbd27220a9fddf22"
+  },
+  "slug": "oil-painting",
+  "displayName": "Oil Painting",
+  "aliases": ["artwork", "art","canvas","portrait"],
+  "category": "Furniture & Home",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0fea67fbd27220a9fddf24"
+  },
+  "slug": "pottery",
+  "displayName": "Pottery",
+  "aliases": ["ceramic","porcelain","china"],
+  "category": "Toys & Hobbies",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0fea6ffbd27220a9fddf25"
+  },
+  "slug": "utensils",
+  "displayName": "Utensils",
+  "aliases": [
+    "fork",
+    "spoon",
+    "knife",
+    "dining ware",
+    "eat"
+  ],
+  "category": "Food & Beverages",
+  "usageCount": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a1297d503fbb547aa92535e"
+  },
+  "slug": "instrument",
+  "displayName": "Instrument",
+  "aliases": [
+    "musical instrument",
+    "music"
+  ],
+  "category": "Toys & Hobbies",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a12984903fbb547aa92535f"
+  },
+  "slug": "synthesizer",
+  "displayName": "Synthesizer",
+  "aliases": [
+    "electronic keyboard",
+    "synth"
+  ],
+  "category": "Toys & Hobbies",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a12c9e9fb2ed46ba44dd78e"
+  },
+  "slug": "guitar",
+  "displayName": "Guitar",
+  "aliases": [
+    "Electric Guitar",
+    "bass"
+  ],
+  "category": "Toys & Hobbies",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a12ca8cfb2ed46ba44dd78f"
+  },
+  "slug": "chair",
+  "displayName": "Chair",
+  "aliases": [
+    "ergonomic",
+    "seat",
+    "stool",
+    "lounge",
+    "bench"
+  ],
+  "category": "Furniture & Home",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773e8"
+  },
+  "slug": "tablet",
+  "displayName": "Tablet",
+  "category": "Electronics",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f3"
+  },
+  "slug": "bag",
+  "displayName": "Bag",
+  "category": "Clothing & Accessories",
+  "aliases": [
+    "purse",
+    "tote",
+    "backpack"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773f6"
+  },
+  "slug": "jewelry",
+  "displayName": "Jewelry",
+  "category": "Clothing & Accessories",
+  "aliases": [
+    "bling",
+    "ice",
+    "bracelet",
+    "earrings",
+    "ring"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77402"
+  },
+  "slug": "textbook",
+  "displayName": "Textbook",
+  "category": "Books & Media",
+  "aliases": [
+    "book"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77404"
+  },
+  "slug": "vinyl-record",
+  "displayName": "Vinyl Record",
+  "category": "Books & Media",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f77407"
+  },
+  "slug": "board-game",
+  "displayName": "Board Game",
+  "category": "Books & Media",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7740a"
+  },
+  "slug": "plant",
+  "displayName": "Plant",
+  "category": "Furniture & Home",
+  "aliases": [
+    "flower",
+    "vegetable",
+    "seed",
+    "soil",
+    "garden",
+    "flora"
+  ],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f7740d"
+  },
+  "slug": "air-fryer",
+  "displayName": "Air Fryer",
+  "category": "Food & Beverages",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a0e39da86d75b4e69f773ec"
+  },
+  "slug": "smartwatch",
+  "displayName": "Smartwatch",
+  "category": "Electronics",
+  "aliases": [],
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a1cb2cae7d88e5e27676581"
+  },
+  "slug": "poetry",
+  "displayName": "Poetry",
+  "aliases": [
+    "verse",
+    "literature"
+  ],
+  "category": "Toys & Hobbies",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a1e608b396f6d345e7cfc93"
+  },
+  "slug": "cajun-food",
+  "displayName": "Cajun Food",
+  "aliases": [],
+  "category": "Food & Beverage",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a1e6093396f6d345e7cfc94"
+  },
+  "slug": "mexican-food",
+  "displayName": "Mexican Food",
+  "aliases": [],
+  "category": "Food & Beverage",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a1e609d396f6d345e7cfc95"
+  },
+  "slug": "western-cuisine",
+  "displayName": "Western Cuisine",
+  "aliases": [
+    "western food"
+  ],
+  "category": "Food & Beverages",
+  "usageCount": 0
+},
+{
+  "_id": {
+    "$oid": "6a1e60a2396f6d345e7cfc96"
+  },
+  "slug": "restaurant",
+  "displayName": "Restaurant",
+  "aliases": [
+    "diner",
+    "cafe",
+    "food",
+    "cookhouse"
+  ],
+  "category": "Food & Beverage",
+  "usageCount": 0
+}]
