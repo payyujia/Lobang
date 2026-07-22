@@ -166,7 +166,7 @@ export default function UpdateAccount() {
 
               {/* Identity */}
               <div className="form-section">
-                <div className="form-section__title">👤 Identity</div>
+                <div className="form-section__title">Identity</div>
                 <div className="field">
                   <label>Display Name</label>
                   <input type="text" maxLength={40} required value={form.name} onChange={set('name')} />
@@ -201,7 +201,7 @@ export default function UpdateAccount() {
 
               {/* Security */}
               <div className="form-section">
-                <div className="form-section__title">🔒 Security</div>
+                <div className="form-section__title">Security</div>
                 <p className="text-sm">Leave blank to keep your current password.</p>
                 <div className="field">
                   <label>New Password</label>
@@ -221,7 +221,7 @@ export default function UpdateAccount() {
               {/* Actions */}
               <div className="form-section" style={{ flexDirection: 'row', gap: 10 }}>
                 <button type="submit" className="btn btn--primary" style={{ flex: 1 }} disabled={submitting}>
-                  {submitting ? 'Saving…' : 'Save changes ✨'}
+                  {submitting ? 'Saving…' : 'Save changes'}
                 </button>
                 <button type="button" className="btn btn--ghost" onClick={() => navigate(`/profile/${user.id}`)}>
                   Cancel
