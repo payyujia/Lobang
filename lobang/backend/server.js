@@ -56,9 +56,8 @@ async function connectDB() {
 
 function startServer() {
   const port     = process.env.PORT || 8000;
-  const hostname = 'localhost';
-  httpServer.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+  httpServer.listen(port, () => {
+    console.log(`Server running on port ${port}`);
   });
 }
 
