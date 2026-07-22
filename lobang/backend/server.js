@@ -6,9 +6,10 @@ const mongoose  = require('mongoose');
 const path      = require('path');
 const { initSocket } = require('./socketSetup');
 
-dotenv.config({ path: './config.env' });
+dotenv.config();
 
 const app = express();
+app.set('trust proxy', 1);
 
 //  Session middleware (stored in variable so Socket.io can share it) 
 const sessionMiddleware = session({
@@ -34,7 +35,7 @@ app.use('/api/chats',         require('./routes/chatRoutes'));
 //  Serve React build in production ─
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
-  app.get('*', (req, res) => {
+  app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
   });
 }
