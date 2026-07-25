@@ -56,7 +56,6 @@
   border-radius: var(--radius-lg);
   padding: 20px;
   display: flex; flex-direction: column; gap: 12px;
-  position: sticky;
   top: calc(var(--nav-h) + 16px);
 }
 
@@ -85,8 +84,8 @@
   color: var(--text); transition: border-color var(--t), background var(--t);
 }
 
-.star-filter-btn:hover  { border-color: var(--accent); }
-.star-filter-btn.active { border-color: var(--primary); background: var(--primary); }
+.star-filter-btn:hover  { border-color: var(--secondary); }
+.star-filter-btn.active { border-color: var(--accent); background: var(--accent); }
 .star-filter-btn__count { color: var(--text-2); font-size: 11px; margin-left: auto; }
 
 /* Review card */

@@ -126,15 +126,14 @@ export default function Navbar() {
         />
         {/* Category dropdown */}
         <div className="nav__dropdown-wrap" ref={catRef} style={{ position: 'relative' }}>
-          <button
+          <span
             type="button"
-            className={`btn btn--sm btn--ghost cat-btn${selectedCats.length ? ' cat-btn--active' : ''}`}
             onClick={() => setCatOpen(o => !o)}
           >
-            Categories {selectedCats.length > 0 && <span className="cat-badge">{selectedCats.length}</span>} ⏷
-          </button>
+            {selectedCats.length > 0 && <span className="cat-badge">{selectedCats.length}</span>} ⏷
+          </span>
           {catOpen && (
-            <div className="nav__dropdown cat-dropdown">
+            <div className="nav__dropdown">
               <div className="nav__dropdown-header">Filter by Category</div>
               {CATEGORIES.map(cat => (
                 <label key={cat} className="cat-option">
@@ -224,6 +223,20 @@ export default function Navbar() {
           {menuOpen && (
             <div className="nav__dropdown">
               <div className="nav__dropdown-header">Account</div>
+
+              {/* Mobile-only: shown when avatar/add-listing are hidden from the main bar */}
+              <Link to={`/profile/${user.id}`} className="mobile-only" onClick={() => setMenuOpen(false)}>
+                {user.avatar
+                  ? <img className="nav__avatar nav__avatar--sm" src={`/uploads/${user.avatar}`} alt={user.name} />
+                  : <span className="nav__avatar nav__avatar--sm">{initials}</span>
+                }
+                My Profile
+              </Link>
+              <Link to="/listings/form" className="mobile-only" onClick={() => setMenuOpen(false)}>
+                <img src="/icons/pen.svg" style={{ width: '1.2em', height: '1.2em' }} />
+                Add Listing
+              </Link>
+
               <Link to="/update-account" onClick={() => setMenuOpen(false)}>Account Settings</Link>
               <button
                 className="danger"

@@ -24,7 +24,6 @@
   align-items: center;
   gap: 14px;
   text-align: center;
-  position: sticky;
   top: calc(var(--nav-h) + 16px);
 }
 

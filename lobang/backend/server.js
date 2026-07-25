@@ -18,13 +18,13 @@ const sessionMiddleware = session({
   saveUninitialized: false,
 });
 
-//  Middleware ─
+//  Middleware 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(sessionMiddleware);  //  use the variable, not an inline call
 
-//  API Routes ─
+//  API Routes 
 app.use('/api',          require('./routes/userRoutes'));
 app.use('/api/listings',      require('./routes/listingRoutes'));
 app.use('/api/tags',          require('./routes/tagRoutes'));
@@ -32,7 +32,7 @@ app.use('/api/notifications', require('./routes/notificationRoutes'));
 app.use('/api/profile',       require('./routes/profileRoutes'));
 app.use('/api/chats',         require('./routes/chatRoutes'));
 
-//  Serve React build in production ─
+//  Serve React build in production 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
   app.get(/.*/, (req, res) => {
@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === 'production') {
 const httpServer = http.createServer(app);
 initSocket(httpServer, sessionMiddleware);
 
-//  DB + Start ─
+//  DB + Start 
 async function connectDB() {
   try {
     await mongoose.connect(process.env.DB);

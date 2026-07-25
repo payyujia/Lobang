@@ -14,7 +14,7 @@ exports.showBlog = async (req, res) => {
     const profileUser = await User.findById(req.params.id)
     const isOwner = String(req.session.user.id) === String(profileUser._id);
 
-    const listings = await Listing.findByUser(profileUser._id).populate('ownerId','name').lean();
+    const listings = await Listing.findActiveForUser(profileUser._id).populate('ownerId','name').lean();
     const wishlistUser = await User.findById(profileUser._id)
       .populate({
         path:     'wishlist',

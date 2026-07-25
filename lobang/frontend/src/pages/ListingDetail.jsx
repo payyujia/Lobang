@@ -146,7 +146,7 @@ export default function ListingDetail() {
           </div>
           
           {/* Title & meta */}
-          <div style={{  padding: '0px 28px 24px'}}>
+          <div className="img-panel__content">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
               <h1 className="form-title">{listing.title}</h1>
               {isOwner && (
@@ -190,7 +190,7 @@ export default function ListingDetail() {
         </div>
 
           {/*  Offers section  */}
-          <div className="form-panel">
+          <div className="form-panel img-panel__content">
             <h2 className="form-title" style={{ fontSize: 20 }}>
               {isOwner ? `Offers (${offers.length})` : 'Make an Offer'}
             </h2>

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import '../styles/ListingCard.css';
 
 export default function ListingCard({ listing, actions }) {
   const ownerName  = listing.ownerId?.name ?? listing.owner?.name ?? 'Unknown';
