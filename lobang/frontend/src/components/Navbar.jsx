@@ -85,7 +85,7 @@ export default function Navbar() {
     setUnread(0);
     setNotifs(prev => prev.map(n => ({ ...n, isRead: true })));
   };
-
+  
   const handleNotifClick = async (n) => {
     setNotifOpen(false);
     
