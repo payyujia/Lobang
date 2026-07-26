@@ -44,6 +44,9 @@ exports.findById = function (id) {
 exports.findByUser = function (ownerId) {
   return Listing.find({ ownerId }).sort({ createdAt: -1 });
 }
+exports.findActiveForUser = function(ownerId) {
+  return Listing.find({ ownerId, status:'active' }).sort({ createdAt: -1 });
+}
 exports.findByIdandUser = function (ownerId, listingId) {
   return Listing.findOne({ _id: listingId, ownerId });
 }
@@ -248,10 +251,10 @@ exports.searchListings = function ({ textQuery, selectedCategories = [], page = 
  * Increment view count atomically. Call when a listing page is opened.
  */
 exports.incrementViews = function (listingId) {
-  return Listing.findOneAndUpdate({ _id: listingId}, { $inc: { 'popularity.views': 1 } }, {returnDocument: 'after'});
+  return Listing.findOneAndUpdate({ _id: listingId }, { $inc: { 'popularity.views': 1 } }, { returnDocument: 'after' });
 };
 exports.incrementOffers = function (listingId) {
-  return Listing.findOneAndUpdate({ _id: listingId }, { $inc: { 'popularity.offers': 1 } }, {returnDocument:'after'});
+  return Listing.findOneAndUpdate({ _id: listingId }, { $inc: { 'popularity.offers': 1 } }, { returnDocument: 'after' });
 };
 exports.getSimilarListingsBySeller = async function (ownerId, currentListingId, descTags, { limit = 4 } = {}) {
   // 1. Fetch active listings by this seller, excluding the current one
