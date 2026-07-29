@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const { initSocket } = require('./socketSetup');
 
-dotenv.config();
+dotenv.config({ path: './config.env' });
 
 const app = express();
 app.set('trust proxy', 1);
