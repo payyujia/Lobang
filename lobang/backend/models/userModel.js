@@ -29,6 +29,13 @@ exports.updateByEmail = function (email,updates){
 exports.findById = function (id) {
     return User.findOne({_id:id});
 };
+exports.inWishlist = async function (userId, listingId) {
+  const user = await User.findOne(
+    { _id: userId, wishlist: listingId }, 
+    '_id'
+  );
+  return !!user; 
+};
 exports.addToWishlist = function (userId, listingId) {
   return User.updateOne(
     { _id: userId },

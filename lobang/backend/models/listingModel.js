@@ -19,7 +19,7 @@ const listingSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-//  Indexes --
+//  Indexes
 listingSchema.index({ status: 1, createdAt: -1 });   // recent listings feed
 listingSchema.index({ 'location.coordinates': '2dsphere' }); //location
 listingSchema.index({ desiredItems: 1 });             // tag-based recommendation
@@ -255,6 +255,9 @@ exports.incrementViews = function (listingId) {
 };
 exports.incrementOffers = function (listingId) {
   return Listing.findOneAndUpdate({ _id: listingId }, { $inc: { 'popularity.offers': 1 } }, { returnDocument: 'after' });
+};
+exports.alterLikes = function (listingId,alpha) {
+  return Listing.findOneAndUpdate({ _id: listingId }, { $inc: { 'popularity.likes': alpha } }, { returnDocument: 'after' });
 };
 exports.getSimilarListingsBySeller = async function (ownerId, currentListingId, descTags, { limit = 4 } = {}) {
   // 1. Fetch active listings by this seller, excluding the current one

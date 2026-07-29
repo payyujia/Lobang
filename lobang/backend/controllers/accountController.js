@@ -25,12 +25,11 @@ exports.loginPost = async (req, res) => {
     if (!email) error.push('Name cannot be empty.');
     if (!password) error.push('Password cannot be empty.');
 
-    if (error.length > 0) return res.json({ error });
-
+    if (error.length > 0) return res.status(400).json({ error });
     const user = await User.getByEmail(email);
     if (!user || !(await bcrypt.compare(password, user.passwordHash))) {
         error.push('Invalid email or password.');
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
     req.session.user = { id:user._id, email: user.email, name: user.name, avatar:user.avatar };
     res.json({ user: req.session.user });

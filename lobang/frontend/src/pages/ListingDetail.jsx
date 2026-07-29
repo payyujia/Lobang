@@ -12,6 +12,7 @@ export default function ListingDetail() {
   const [data, setData]         = useState(null);
   const [loading, setLoading]   = useState(true);
   const [carouselIdx, setIdx]   = useState(0);
+  const [liked, setLiked]       = useState(false);
 
   // Offer creation state
   const [myListings, setMyListings]   = useState([]);
@@ -22,7 +23,10 @@ export default function ListingDetail() {
   useEffect(() => {
     fetch(`/api/listings/${id}`, { credentials: 'include' })
       .then(r => r.json())
-      .then(d => setData(d))
+      .then(d => {
+        setData(d);
+        setLiked(d.liked);
+      })
       .finally(() => setLoading(false));
   }, [id]);
 
@@ -62,7 +66,10 @@ export default function ListingDetail() {
         body:        JSON.stringify({ offeredListings: selected }),
       });
       if (res.ok) {
-        navigate(`/profile/${user.id}?tab=offers`);
+        const {newOffer} = await res.json();
+        setData(prev => ({ ...prev, offers: [newOffer, ...prev.offers] }));
+        setSelected([]);
+        setOfferSearch('');
       }
     } finally {
       setSub(false);
@@ -76,6 +83,30 @@ export default function ListingDetail() {
     setData(d);
   };
 
+const handleLike = async () => {
+  if (!id) return;
+  const previousState = liked;
+  setLiked(!liked); 
+
+  try {
+    const res = await fetch(`/api/listings/${id}/like`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ previousState }),
+    });
+
+    const payload = await res.json().catch(() => ({}));
+    
+    if (!res.ok) {
+      throw new Error(payload.error || 'Failed to amend like');
+    }
+  } catch (err) {
+    console.error(err);
+    //Revert the UI if the backend failed
+    setLiked(previousState);
+  }
+};
   if (loading) return <div className="page"><div className="detail-loading">Loading…</div></div>;
   if (!data?.listing) return <div className="page"><p>Listing not found.</p></div>;
 
@@ -141,7 +172,16 @@ export default function ListingDetail() {
               )}
             </div>
             {!isOwner && (
-              <Link to={`/chats`} className="btn btn--ghost btn--sm"><img src="/icons/chat1.svg" style={{ width: '1em', height: '1em'}}/>Message</Link>
+              <div className="seller-card__actions">
+                <button
+                  className={`btn btn--sm seller-card__like${liked ? ' is-liked' : ''}`}
+                  type="button"
+                  onClick={handleLike}
+                >
+                  {liked ? '♥' : '♡'}
+                </button>
+                <Link to={`/chats`} className="btn btn--ghost btn--sm"><img src="/icons/chat1.svg" style={{ width: '1em', height: '1em'}}/>Message</Link>
+              </div>
             )}
           </div>
           
