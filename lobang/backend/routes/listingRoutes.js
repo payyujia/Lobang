@@ -12,6 +12,7 @@ router.post('/update',authMiddleware.isLoggedIn,upload.array('images', 5),listin
 router.get('/mine/search',authMiddleware.isLoggedIn, listingController.myListingsSearch);
 //:id must be below the rest of the routes because its a catch all
 router.get('/:id',authMiddleware.isLoggedIn,offerController.showListing);
+router.post('/:id/like', authMiddleware.isLoggedIn, listingController.toggleLike);
 router.post('/:id/offers',authMiddleware.isLoggedIn,offerController.createOffer);
 router.post('/:id/offers/:offerId/accept', authMiddleware.isLoggedIn, offerController.acceptOffer);
 router.post('/:id/offers/:offerId/decline', authMiddleware.isLoggedIn, offerController.declineOffer);

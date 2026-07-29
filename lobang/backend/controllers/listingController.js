@@ -131,7 +131,25 @@ exports.createListing = async (req, res) => {
       desiredItems: parseSlugs(desiredItems),
       images: parseImages(req.files),
     });
+    await Tag.incrementTagUsage([...descTags.split(','),...desiredItems.split(',')])
     res.status(201).json({ listing });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+};
+//POST /api/listings/:id/like
+exports.toggleLike = async (req, res) => {
+  try {
+    const listingId = req.params.id;
+    const prev = req.body.previousState
+    if (!listingId) return res.status(400).json({ error: 'listing id required' });
+    await Promise.all([
+      prev? Listing.alterLikes(listingId,-1): Listing.alterLikes(listingId,1),
+      prev? User.removeFromWishlist(req.session.user.id,listingId):User.addToWishlist(req.session.user.id, listingId),
+    ]);
+
+    res.json({ success: true, listingId });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });

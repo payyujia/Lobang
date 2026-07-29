@@ -25,8 +25,8 @@ exports.showListing = async (req, res) => {
     const sellerSimilar = await Listing.getSimilarListingsBySeller(
       seller, listing._id, listing.descTags
     );
-
-    res.json({ listing, seller, isOwner, offers, sellerSimilar });
+    const liked = await User.inWishlist(req.session.user.id,listing._id);
+    res.json({ listing, seller, isOwner, offers, sellerSimilar, liked });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
@@ -39,10 +39,10 @@ exports.createOffer = async (req, res) => {
     const listing = await Listing.incrementOffers(req.params.id);
     const { offeredListings } = req.body;
 
-    const offer = await Offer.create(
+    let newOffer = await Offer.create(
       req.params.id, req.session.user.id, offeredListings, 'pending'
     );
-    await User.addToWishlist(req.session.user.id, req.params.id);
+
     const newNotif = await Notification.createNotification({
       recipientId: listing.ownerId,
       type:        'offer',
@@ -51,7 +51,12 @@ exports.createOffer = async (req, res) => {
     });
     pushNotification(listing.ownerId, newNotif);
 
-    res.status(201).json({ offer });
+    newOffer = await newOffer.populate([
+      { path: 'offererId', select: 'name' },
+      { path: 'offeredListingId', select: 'title images' },
+    ]);
+
+    res.status(201).json({ newOffer });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
@@ -217,11 +222,7 @@ exports.cancelOffer = async (req, res) => {
     const offer = await Offer.findById(req.params.offerId)
       .populate('listingId', '_id title ownerId')
       .lean();
-
-    await Promise.all([
-      User.removeFromWishlist(req.session.user.id, req.params.id),
-      Offer.cancel(offer._id),
-    ]);
+    await Offer.cancel(offer._id);
     const newNotif = await Notification.createNotification({
       recipientId: offer.listingId.ownerId,
       type:        'reject',

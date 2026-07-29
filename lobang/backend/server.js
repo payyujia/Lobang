@@ -1,9 +1,9 @@
-const express   = require('express');
-const http      = require('http');
-const session   = require('express-session');
-const dotenv    = require('dotenv');
-const mongoose  = require('mongoose');
-const path      = require('path');
+const express = require('express');
+const http = require('http');
+const session = require('express-session');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const path = require('path');
 const { initSocket } = require('./socketSetup');
 
 dotenv.config();
@@ -13,8 +13,8 @@ app.set('trust proxy', 1);
 
 //  Session middleware (stored in variable so Socket.io can share it) 
 const sessionMiddleware = session({
-  secret:            process.env.SECRET,
-  resave:            false,
+  secret: process.env.SECRET,
+  resave: false,
   saveUninitialized: false,
 });
 
@@ -25,12 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(sessionMiddleware);  //  use the variable, not an inline call
 
 //  API Routes 
-app.use('/api',          require('./routes/userRoutes'));
-app.use('/api/listings',      require('./routes/listingRoutes'));
-app.use('/api/tags',          require('./routes/tagRoutes'));
+app.use('/api', require('./routes/userRoutes'));
+app.use('/api/listings', require('./routes/listingRoutes'));
+app.use('/api/tags', require('./routes/tagRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
-app.use('/api/profile',       require('./routes/profileRoutes'));
-app.use('/api/chats',         require('./routes/chatRoutes'));
+app.use('/api/profile', require('./routes/profileRoutes'));
+app.use('/api/chats', require('./routes/chatRoutes'));
 
 //  Serve React build in production 
 if (process.env.NODE_ENV === 'production') {
@@ -56,7 +56,7 @@ async function connectDB() {
 }
 
 function startServer() {
-  const port     = process.env.PORT || 8000;
+  const port = process.env.PORT || 8000;
   httpServer.listen(port, () => {
     console.log(`Server running on port ${port}`);
   });

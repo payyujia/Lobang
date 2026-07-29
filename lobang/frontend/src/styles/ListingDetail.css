@@ -69,6 +69,25 @@
   font-weight: 600;
 }
 
+.seller-card__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.seller-card__like {
+  white-space: nowrap;
+  font-size:larger;
+}
+
+.seller-card__like.is-liked {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
 /* Make offer panel */
 .offer-make-panel {
   display: flex;
